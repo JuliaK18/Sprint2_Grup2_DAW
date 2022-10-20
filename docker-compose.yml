@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+    apache-php:
+        image: php:7.3-apache
+        links:
+            - 'mariadb:db'
+        ports:
+            - 81:80
+        volumes:
+            - "./DocumentRoot:/var/www/html"
+
+    mariadb:
+        image: mariadb:10.5.2
+        volumes: 
+            - "./database:/var/lib/mysql"
+        environment:
+            TZ: "Europe/Madrid"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: 'rootpsw'
+            MYSQL_USER: 'gestinf'
+            MYSQL_PASSWORD: 'gestinf'
+            MYSQL_DATABASE: 'gestinf'
+
+    phpmyadmin:
+        image: phpmyadmin
+        links: 
+            - 'mariadb:db'
+        ports:
+            - 8081:80
