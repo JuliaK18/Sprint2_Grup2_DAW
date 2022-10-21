@@ -34,6 +34,10 @@
 
         }
 
+        function crearUsuari(){
+            
+        }
+
         function consultaUsuari($id){
             $query ="select * from Usuari where id.usuari = '$id';";
             return $linea;
