@@ -34,14 +34,17 @@
 
         }
 
-        
-        function crearUsuari(){
 
+        function eliminarUsuari($id){
+            $query ="delete * from Usuari where id.usuari = '$id';";
         }
 
         function consultaUsuari($id){
-            $query ="select * from Usuari where id.usuari = '$id';";
-            return $linea;
+            if ($query ="select from Usuari where id.usuari = '$id';"){
+                echo"Usuari eliminat";
+            }else{
+                echo"Error al eliminar Usuari";
+            }
         }
         function consultaNom($linea){
             $linea = $consulta->fetch_assoc();
