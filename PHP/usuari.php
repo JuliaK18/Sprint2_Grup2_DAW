@@ -32,7 +32,7 @@
             $this->validat = $validat;
             $this->tipusUsuari = $tipusUsuari;
 
-          }
+        }
 
         function consultaUsuari($id){
             $query ="select * from Usuari where id.usuari = '$id';";
