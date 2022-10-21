@@ -15,6 +15,30 @@
         private $validat;
         private $tipusUsuari;
 
+
+        function __construct($id, $nom, $cognom, $DNI, $telefon, $dataNaixement, $dataInscripcio, $nomUsuari, $contrasenya, $email, $estatVerificat, $bloquejat, $validat, $tipusUsuari) {
+            $this->id = $id;
+            $this->nom = $nom;
+            $this->cognom = $cognom;
+            $this->DNI = $DNI;
+            $this->telefon = $telefon;
+            $this->datNaixement = $dataNaixement;
+            $this->dataInscripcio = $dataInscripcio;
+            $this->nomUsuari = $nomUsuari;
+            $this->contrasenya = $contrasenya;
+            $this->email = $email;
+            $this->estatVerificat = $estatVerificat;
+            $this->bloquejat = $bloquejat;
+            $this->validat = $validat;
+            $this->tipusUsuari = $tipusUsuari;
+
+        }
+
+        
+        function crearUsuari(){
+
+        }
+
         function consultaUsuari($id){
             $query ="select * from Usuari where id.usuari = '$id';";
             return $linea;
@@ -71,13 +95,6 @@
             $linea = $consulta->fetch_assoc();
             return $linea[$tipusUsuari];
         }
-
-        function crearUsuari($){
-
-        }
-        
-
-
 
         }
     
