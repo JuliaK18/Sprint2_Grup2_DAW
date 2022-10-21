@@ -34,8 +34,9 @@
 
         }
 
+        
         function crearUsuari(){
-            
+
         }
 
         function consultaUsuari($id){
