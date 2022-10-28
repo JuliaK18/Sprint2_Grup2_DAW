@@ -1,5 +1,25 @@
 <?php
 include connect.php;
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+$_POST["name"];
+
+
+
+
     class usuari{
         private $id;
         private $nom;
@@ -15,9 +35,11 @@ include connect.php;
         private $bloquejat;
         private $validat;
         private $tipusUsuari;
+        private $bio;
+        private $web;
 
 
-        function __construct($id, $nom, $cognom, $DNI, $telefon, $dataNaixement, $dataInscripcio, $nomUsuari, $contrasenya, $email, $estatVerificat, $bloquejat, $validat, $tipusUsuari) {
+        function __construct($id, $nom, $cognom, $DNI, $telefon, $dataNaixement, $dataInscripcio, $nomUsuari, $contrasenya, $email, $estatVerificat, $bloquejat, $validat, $tipusUsuari, $bio, $web) {
             $this->id = $id;
             $this->nom = $nom;
             $this->cognom = $cognom;
@@ -32,6 +54,8 @@ include connect.php;
             $this->bloquejat = $bloquejat;
             $this->validat = $validat;
             $this->tipusUsuari = $tipusUsuari;
+            $this->bio = $bio;
+            $this->web = $web;
 
         }
 
@@ -41,7 +65,7 @@ include connect.php;
             $query ="DELETE * from Usuari where id.usuari = '$id';";
             desconetar();
         }
-        function modifiacarUsuari($id,$camp,$dades){
+        function modifiacarUsuari($id){
             conectar();
             $usuari = consultaUsuari($id);
             $resultat = $usuari->fetch_assoc();
