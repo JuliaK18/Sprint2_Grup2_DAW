@@ -2,14 +2,19 @@ version: '3.7'
 
 services:
     apache-php:
-        image: php:7.3-apache
+        image: php:8.1-apache
         links:
             - 'mariadb:db'
         ports:
-            - 81:80
+            - 82:80
         volumes:
             - "./DocumentRoot:/var/www/html"
-
+    nodejs:
+        image: node
+        ports: 
+            - 8084:80
+        tty: true
+        
     mariadb:
         image: mariadb:10.5.2
         volumes: 
@@ -18,13 +23,13 @@ services:
             TZ: "Europe/Madrid"
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
             MYSQL_ROOT_PASSWORD: 'rootpsw'
-            MYSQL_USER: 'gestinf'
-            MYSQL_PASSWORD: 'gestinf'
-            MYSQL_DATABASE: 'gestinf'
+            MYSQL_USER: 'r00t'
+            MYSQL_PASSWORD: 'r00t'
+            MYSQL_DATABASE: 'Mirmeets2'
 
     phpmyadmin:
         image: phpmyadmin
         links: 
             - 'mariadb:db'
         ports:
-            - 8081:80
+            - 8086:80
