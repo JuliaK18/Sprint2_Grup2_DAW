@@ -1,6 +1,6 @@
 <?php
 function conectar(){
-$mysqli = new mysqli("localhost", "my_user", "my_password", "world");
+$mysqli = new mysqli("localhost", "r00t", "r00t", "Mirmeets2");
 
 /* comprobar la conexión */
 if ($mysqli->connect_errno) {

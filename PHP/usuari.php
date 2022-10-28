@@ -1,4 +1,5 @@
 <?php
+include connect.php;
     class usuari{
         private $id;
         private $nom;
@@ -36,73 +37,77 @@
 
 
         function eliminarUsuari($id){
-            $query ="delete * from Usuari where id.usuari = '$id';";
+            conectar();
+            $query ="DELETE * from Usuari where id.usuari = '$id';";
+            desconetar();
         }
         function modifiacarUsuari($id,$camp,$dades){
+            conectar();
             $usuari = consultaUsuari($id);
-
+            $resultat = $usuari->fetch_assoc();
+            
+            $query = ("UPDATE Usuari SET WHERE id.usuari = '$id' ");
+            desconetar();
         }
 
         function consultaUsuari($id){
-            
-            if ($query ="select from Usuari where id.usuari = '$id';"){
-                
-            }else{
-                echo"Error al eliminar Usuari";
+            conectar();
+            if ($linea = mysqli_query ($query ="SELECT FROM Usuari WHERE id.usuari = '$id';")){ 
             }
-        
+            desconetar();
+            return $linea;
         }
         function consultaNom($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$nom];
+            $resultat =$linea->fetch_assoc();
+            return $resultat[$nom];
         }
         function consultaCognom($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$cognom];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$cognom];
         }
         function consultaDNI($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$DNI];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$DNI];
         }
         function consultaTelefon($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$telefon];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$telefon];
         }
         function consultaDataNaixement($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$dataNaixement];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$dataNaixement];
         }
         function consultaDataInscripcio($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$dataInscripcio];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$dataInscripcio];
         }
         function consultaNomUsuari($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$nomUsuari];
+            $resultat = $consulta->fetch_assoc();
+            return $resultat[$nomUsuari];
         }
         function consultaContrasenya($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$contrasenya];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$contrasenya];
         }
         function consultaEmail($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$email];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$email];
         }
         function consultaEstatVerificat($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$estatVerificat];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$estatVerificat];
         }
         function consultaBloquejat($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$bloquejat];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$bloquejat];
         }
         function consultaValidat($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$validat];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$validat];
         }
         function consultaTipusUsuari($linea){
-            $linea = $consulta->fetch_assoc();
-            return $linea[$tipusUsuari];
+            $resultat = $linea->fetch_assoc();
+            return $resultat[$tipusUsuari];
         }
 
         }
