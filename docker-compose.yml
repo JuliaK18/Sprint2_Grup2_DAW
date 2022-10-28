@@ -23,8 +23,8 @@ services:
             TZ: "Europe/Madrid"
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
             MYSQL_ROOT_PASSWORD: 'rootpsw'
-            MYSQL_USER: 'r00t'
-            MYSQL_PASSWORD: 'r00t'
+            MYSQL_USER: 'r00t' # root
+            MYSQL_PASSWORD: 'r00t' # rootpsw
             MYSQL_DATABASE: 'Mirmeets2'
 
     phpmyadmin:
