@@ -1,0 +1,10 @@
+insert into Insignies (Id, Nom) values (1, 'Wallaby, dama');
+insert into Insignies (Id, Nom) values (2, 'Lesser masked weaver');
+insert into Insignies (Id, Nom) values (3, 'Hawk, ferruginous');
+insert into Insignies (Id, Nom) values (4, 'Little grebe');
+insert into Insignies (Id, Nom) values (5, 'Turtle, snake-necked');
+insert into Insignies (Id, Nom) values (6, 'Goose, knob-nosed');
+insert into Insignies (Id, Nom) values (7, 'Bird, black-throated butcher');
+insert into Insignies (Id, Nom) values (8, 'Defassa waterbuck');
+insert into Insignies (Id, Nom) values (9, 'Eastern grey kangaroo');
+insert into Insignies (Id, Nom) values (10, 'Killer whale');

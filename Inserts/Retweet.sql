@@ -1,0 +1,10 @@
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (1, '5/11/2022', 1, 1);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (2, '9/19/2022', 2, 2);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (3, '2/14/2022', 3, 3);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (4, '9/4/2022', 4, 4);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (5, '5/20/2022', 5, 5);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (6, '9/19/2022', 6, 6);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (7, '3/8/2022', 7, 7);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (8, '8/28/2022', 8, 8);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (9, '6/21/2022', 9, 9);
+insert into Retweet (id, Data, IdPublicacio, IdUsuari) values (10, '5/23/2022', 10, 10);

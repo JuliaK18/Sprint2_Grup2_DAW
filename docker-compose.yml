@@ -2,19 +2,16 @@ version: '3.7'
 
 services:
     apache-php:
-        image: php:8.1-apache
+        image: php:7.3-apache
         links:
             - 'mariadb:db'
         ports:
-            - 82:80
+            - 83:80
         volumes:
             - "./DocumentRoot:/var/www/html"
-    nodejs:
-        image: node
-        ports: 
-            - 8084:80
-        tty: true
-        
+        command: "/bin/sh -c 'docker-php-ext-install mysqli && exec apache2-foreground'"
+
+
     mariadb:
         image: mariadb:10.5.2
         volumes: 
@@ -23,13 +20,13 @@ services:
             TZ: "Europe/Madrid"
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
             MYSQL_ROOT_PASSWORD: 'rootpsw'
-            MYSQL_USER: 'r00t' # root
-            MYSQL_PASSWORD: 'r00t' # rootpsw
-            MYSQL_DATABASE: 'Mirmeets2'
+            MYSQL_USER: 'r00t'
+            MYSQL_PASSWORD: 'r00t'
+            MYSQL_DATABASE: 'mirmeets2'
 
     phpmyadmin:
         image: phpmyadmin
         links: 
             - 'mariadb:db'
         ports:
-            - 8086:80
+            - 8084:80
