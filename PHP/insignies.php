@@ -11,13 +11,6 @@ class insignies{
             $this->nom = $nom;
         }
 
-        public function Connect(){
-            $conn = mysqli_connect($this->host, $this->user, $this->pass, $this->db);
-            if ($conn) {
-                echo "Connected";
-            }
-        }
-
         function consultaInsignia($id){
             $query ="select * from Insignies where id.insignica = '$id';";
             return $linea;
