@@ -76,7 +76,7 @@ fieldset {
 }
 
 #buscarform fieldset {
-    float: left
+    float: left;
 }
 
 #buscarform .search {
