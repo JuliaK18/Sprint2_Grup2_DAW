@@ -32,23 +32,6 @@ CREATE TABLE `Insignies` (
   `Nom` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `Insignies`
---
-
-INSERT INTO `Insignies` (`Id`, `Nom`) VALUES
-(1, 'Wallaby, dama'),
-(2, 'Lesser masked weaver'),
-(3, 'Hawk, ferruginous'),
-(4, 'Little grebe'),
-(5, 'Turtle, snake-necked'),
-(6, 'Goose, knob-nosed'),
-(7, 'Bird, black-throated butcher'),
-(8, 'Defassa waterbuck'),
-(9, 'Eastern grey kangaroo'),
-(10, 'Killer whale');
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Insignies_Usuaris`
@@ -61,24 +44,6 @@ CREATE TABLE `Insignies_Usuaris` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `Insignies_Usuaris`
---
-
-INSERT INTO `Insignies_Usuaris` (`Id`, `IdUsuari`, `IdInsignia`) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5),
-(6, 6, 6),
-(7, 7, 7),
-(8, 8, 8),
-(9, 9, 9),
-(10, 10, 10);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `Magrada`
 --
 
@@ -89,23 +54,6 @@ CREATE TABLE `Magrada` (
   `IdUsuari` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `Magrada`
---
-
-INSERT INTO `Magrada` (`Id`, `Data`, `IdPublicacio`, `IdUsuari`) VALUES
-(1, '2022-04-11 00:00:00', 1, 1),
-(2, '2022-03-07 00:00:00', 2, 2),
-(3, '2022-05-12 00:00:00', 3, 3),
-(4, '2022-09-01 00:00:00', 4, 4),
-(5, '2023-03-17 00:00:00', 5, 5),
-(6, '2022-01-18 00:00:00', 6, 6),
-(7, '2022-08-13 00:00:00', 7, 7),
-(8, '2022-03-09 00:00:00', 8, 8),
-(9, '2022-05-31 00:00:00', 9, 9),
-(10, '2023-06-09 00:00:00', 10, 10);
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Notificacio`
@@ -136,23 +84,6 @@ CREATE TABLE `Publicacio` (
   `IdUsuari` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `Publicacio`
---
-
-INSERT INTO `Publicacio` (`Id`, `DataPublicacio`, `Censurat`, `IdPost`, `IdComentari`, `IdUsuari`) VALUES
-(1, '2021-01-12 00:00:00', 1, 1, 1, 1),
-(2, '2021-01-09 00:00:00', 0, 2, 2, 2),
-(3, '2021-01-13 00:00:00', 0, 3, 3, 3),
-(4, '2022-10-03 00:00:00', 0, 4, 4, 4),
-(5, '2020-01-25 00:00:00', 0, 5, 5, 5),
-(6, '2021-01-23 00:00:00', 0, 6, 6, 6),
-(7, '2021-08-19 00:00:00', 0, 7, 7, 7),
-(8, '2021-12-24 00:00:00', 1, 8, 8, 8),
-(9, '2022-06-23 00:00:00', 1, 9, 9, 9),
-(10, '2022-01-15 00:00:00', 1, 10, 10, 10);
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Publicacio_Topic`
@@ -163,24 +94,6 @@ CREATE TABLE `Publicacio_Topic` (
   `IdPublicacio` int(11) NOT NULL,
   `IdTopic` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `Publicacio_Topic`
---
-
-INSERT INTO `Publicacio_Topic` (`Id`, `IdPublicacio`, `IdTopic`) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5),
-(6, 6, 6),
-(7, 7, 7),
-(8, 8, 8),
-(9, 9, 9),
-(10, 10, 10);
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Recurs`
@@ -219,23 +132,6 @@ CREATE TABLE `TipusUsuari` (
   `TipusUsuari` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `TipusUsuari`
---
-
-INSERT INTO `TipusUsuari` (`Id`, `TipusUsuari`) VALUES
-(1, 'Admin'),
-(2, 'Admin'),
-(3, 'Normal'),
-(4, 'Normal'),
-(5, 'Admin'),
-(6, 'Normal'),
-(7, 'Admin'),
-(8, 'Admin'),
-(9, 'Normal'),
-(10, 'Normal');
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Topic`
@@ -246,24 +142,6 @@ CREATE TABLE `Topic` (
   `Topic` varchar(50) NOT NULL,
   `Censurat` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `Topic`
---
-
-INSERT INTO `Topic` (`Id`, `Topic`, `Censurat`) VALUES
-(1, '', 0),
-(2, '', 0),
-(3, '', 1),
-(4, '', 0),
-(5, '', 0),
-(6, '', 1),
-(7, '', 0),
-(8, '', 1),
-(9, '', 0),
-(10, '', 0);
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Usuari`
@@ -288,21 +166,6 @@ CREATE TABLE `Usuari` (
   `IdTipusUsuari` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `Usuari`
---
-
-INSERT INTO `Usuari` (`Id`, `Nom`, `Cognom`, `DNI`, `Telefon`, `DataNaixement`, `DataInscripcio`, `NomUsuari`, `Contrasenya`, `CorreuElectronic`, `EstatVerificacio`, `Bloquejat`, `Validat`, `Biografia`, `Web`, `IdTipusUsuari`) VALUES
-(1, 'Wynny', 'Tulleth', '50428705V', '6136824900', '1996-04-23 00:00:00', '2023-02-02 00:00:00', 'wtulleth0', '4gM29KqadX3n', 'wtulleth0@utexas.edu', 1, 0, 1, 'nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet', '', 1),
-(2, 'Krissy', 'Veryan', '66232246H', '1458906051', '1978-06-10 00:00:00', '2022-09-02 00:00:00', 'kveryan1', 'Lt3utrQt4A', 'kveryan1@paypal.com', 1, 1, 1, 'accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean', '', 2),
-(3, 'Pietra', 'Georgescu', '31868751J', '7172999614', '1981-05-30 00:00:00', '2023-06-08 00:00:00', 'pgeorgescu2', 'u7K2yHV', 'pgeorgescu2@engadget.com', 0, 0, 1, 'ante vivamus tortor duis mattis egestas metus aenean fermentum donec', '', 3),
-(4, 'Benny', 'Ondracek', '50264343K', '4994505263', '1990-03-20 00:00:00', '2021-08-13 00:00:00', 'bondracek3', 'SFkEzRE', 'bondracek3@freewebs.com', 1, 1, 0, 'feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet', '', 4),
-(5, 'Kala', 'Scruby', '74426116B', '7927012123', '1986-04-30 00:00:00', '2022-03-10 00:00:00', 'kscruby4', 'dGPdo02mwJ', 'kscruby4@angelfire.com', 1, 0, 1, 'massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo', '', 5),
-(6, 'Christiana', 'Bannard', '44561300L', '3523888682', '1997-05-15 00:00:00', '2021-12-07 00:00:00', 'cbannard5', 'RTRow0', 'cbannard5@goodreads.com', 0, 0, 0, 'in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius', '', 6),
-(7, 'Alia', 'Mattin', '19288271M', '8663618492', '1984-12-09 00:00:00', '2021-10-22 00:00:00', 'amattin6', 'UV4RaOla', 'amattin6@reverbnation.com', 1, 1, 1, 'nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut', '', 7),
-(8, 'Leena', 'Appleyard', '38482464N', '5106761482', '1975-11-03 00:00:00', '2022-05-31 00:00:00', 'lappleyard7', 'juloepWnIlI', 'lappleyard7@mail.ru', 1, 0, 1, 'aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce', '', 8),
-(9, 'Kai', 'Pepon', '28422781L', '7321404087', '1972-03-13 00:00:00', '2022-08-19 00:00:00', 'kpepon8', 'GW5KHqtRU', 'kpepon8@smugmug.com', 1, 1, 0, 'dapibus augue vel accumsan tellus nisi eu orci mauris lacinia', '', 9),
-(10, 'Katherina', 'Asken', '50033362A', '7117432587', '1996-06-17 00:00:00', '2023-11-22 00:00:00', 'kasken9', 'MHgjqLg2', 'kasken9@patch.com', 0, 0, 1, 'lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum', '', 10);
 
 --
 -- Índices para tablas volcadas
