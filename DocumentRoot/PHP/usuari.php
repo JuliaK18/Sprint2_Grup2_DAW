@@ -59,8 +59,8 @@
         /* Consultar el usuari, retorna un array amb les propietats  */
 
         function consultaUsuari($id){
-            include_once 'connexio.php';
-            $consulta=("SELECT Id, Nom, Cognom FROM Usuaris WHERE id=1");
+            include_once '../connexio.php';
+            $consulta=("SELECT Id, Nom, Cognom FROM Usuaris WHERE id.Usuari='$id'");
             if ($result = $connexioDB->query($consulta)) {
                 if ($result->num_rows > 0) {
                     while ($obj = $result->fetch_object()) {
@@ -137,6 +137,6 @@
     $usuari -> consultaUsuari('1'); 
     
 ?>
-    </body>
+</body>
 </html>
     
