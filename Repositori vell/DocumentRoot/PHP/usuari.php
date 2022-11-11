@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuari</title>
-</head>
-<body>
 <?php
-    class Usuari{
+    class usuari{
         private $id;
         private $nom;
         private $cognom;
@@ -28,7 +19,7 @@
 
         /* Constructor */
 
-        function __construct($id) {
+        function __construct($id, $nom, $cognom, $DNI, $telefon, $dataNaixement, $dataInscripcio, $nomUsuari, $contrasenya, $email, $estatVerificat, $bloquejat, $validat, $tipusUsuari, $bio, $web) {
             $this->id = $id;
             $this->nom = $nom;
             $this->cognom = $cognom;
@@ -51,29 +42,20 @@
         /* Eliminar el usuari */
 
         function eliminarUsuari($id){
-            include_once 'connexio.php';
+            include_once '../../connect.php';
+            conectar();
             $query ="DELETE * from Usuari where id.Usuari = '$id';";
-            $connexioDB->close();
+            desconetar();
         }
        
         /* Consultar el usuari, retorna un array amb les propietats  */
 
         function consultaUsuari($id){
-            include_once '../connexio.php';
-            $consulta=("SELECT Id, Nom, Cognom FROM Usuaris WHERE id.Usuari='$id'");
-            if ($result = $connexioDB->query($consulta)) {
-                if ($result->num_rows > 0) {
-                    while ($obj = $result->fetch_object()) {
-                        echo "<tr>";
-                        echo "<td> $obj->Id </td>";
-                        echo "<td> $obj->Nom </td>";
-                        echo "<td> $obj->Cognom </td>";
-                        echo "</tr>";
-                    }
-                }
+            include_once '../../connect.php';
+            conectar();
+            if ($linea = mysqli_query ($query ="SELECT FROM Usuari WHERE id.Usuari = '$id';")){ 
             }
-    
-            $connexioDB->close();
+            desconetar();
             return $linea;
         }
 
@@ -132,11 +114,6 @@
             $resultat = $linea->fetch_assoc();
             return $resultat[$tipusUsuari];
         }
-    }
-    $usuari = new Usuari(1);
-    $usuari -> consultaUsuari('1'); 
-    
-?>
-</body>
-</html>
+
+        }
     
