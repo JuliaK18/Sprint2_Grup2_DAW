@@ -75,36 +75,30 @@
             height="100"></div>
     <div class="cambiar-foto">
         <a href="#cambiar-foto-perfil">Cambiar foto de perfil</a>
-        <p style="line-height: 30px;">Nom de usuari</p>
+        <p style="line-height: 30px;">Nombre de usuario</p>
     </div>
 
     <hr class="linea">
 
-    <form id="form" action="#">
-        <div class="contenedor-perfil" align="center">
-            <table class="perfil">
-                <tr>
-                    <td>Nom Usuari:</td>
-                    <td class="taula-llarga">
-                        <input class="nom-usuari" type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Biografia:</td>
-                    <td class="taula-llarga">
-                        <input class="biografia-usuari" type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Sitio Web:</td>
-                    <td class="taula-llarga">
-                        <input class="web-usuari" type="text">
-                    </td>
-                </tr>
-            </table>
-            <input class="guardar" id="guardar-cambios" type="submit" onclick="guardar_cambios()" value="GUARDAR">
+    <form id="form" action="#" style="margin: 5%; margin-left: 30%; margin-right: 30%;">
+        <div class="row g-6 align-items-center">
+            <div class="row mb-3">                        
+                <label for="inputPassword6" class="col-sm-6 col-form-label">Nombre Usuario:</label>
+                <input class="mb-3 form-control" minlength="6" id="contrasenyaAntigua" type="text" >
+            </div>
+            <div class="row mb-3">                        
+                <label for="inputPassword6" class="col-sm-6 col-form-label">Bibiografia:</label>
+                <input class="mb-3 form-control" minlength="6" id="contrasenyaNueva" type="text" placeholder="Escriba aqui el nuevo correo">
+            </div>
+            <div class="row mb-3">                        
+                <label for="inputPassword6" class="col-sm-6 col-form-label">Sitio Web:</label>
+                <input class="mb-3 form-control" minlength="6" id="contrasenyaNueva" type="text" placeholder="Repita el nuevo numero correo">
+            </div>
         </div>
-    </form>
+
+        <input class="mt-3 rounded-pill btn btn-primary" id="guardar-cambios" type="submit" onclick="guardar_cambios()" value="GUARDAR">
+</div>
+</form>
 </body>
 
 </html>
